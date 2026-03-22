@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "4wc6kqqWAKdpBz2rkTx/aNtFhs8chu45vX1OgH1NEbk=",
+  "Source": "ReceptAPI",
+  "BasePath": "_content/ReceptAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
