@@ -5,11 +5,13 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-var connectionString = builder.Configuration["RecipeURL"]
-    ?? builder.Configuration["AZURE_POSTGRESQL_CONNECTIONSTRING"]
-    ?? builder.Configuration.GetConnectionString("DefaultConnection")
-    ?? throw new InvalidOperationException(
-        "Az adatbazis kapcsolat hianyzik. Allitsd be a RecipeURL vagy DatabaseURL env valtozot, vagy a ConnectionStrings:DefaultConnection erteket.");
+var connectionString = Environment.GetEnvironmentVariable("AZURE_POSTGRESQL_CONNECTIONSTRING");
+
+if (string.IsNullOrEmpty(connectionString))
+{
+    // Ez segít látni a logban, ha a változó hiányzik
+    throw new Exception("Hiba: Az AZURE_POSTGRESQL_CONNECTIONSTRING környezeti változó nem található!");
+}
 
 builder.Services.AddDbContext<RecipeContext>(options =>
     options.UseNpgsql(connectionString));
