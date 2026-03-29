@@ -5,8 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddDbContext<RecipeContext>(options =>
-    options.UseInMemoryDatabase("RecipeDb"));
+builder.Services.AddDbContext<Recipe.RecipeContext>(options => options.UseInMemoryDatabase("RecipeList"));
 
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
@@ -19,16 +18,12 @@ builder.Services.AddScoped<IRecipeService, RecipeService>();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-
-}
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
-
 app.UseAuthorization();
 app.MapControllers();
+
+app.MapGet("/health", () => Results.Ok("A Backend fut!"));
 app.Run();
