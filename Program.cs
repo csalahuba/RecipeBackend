@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddDbContext<Recipe.RecipeContext>(options => options.UseInMemoryDatabase("RecipeList"));
+builder.Services.AddDbContext<RecipeContext>(options => options.UseInMemoryDatabase("RecipeList"));
 
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi

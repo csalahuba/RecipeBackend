@@ -148,3 +148,4 @@ D:\RecipeProjectCsalaHuba\mp1_recipeproject_huba\ReceptAPI\obj\Debug\net8.0\Rece
 D:\RecipeProjectCsalaHuba\mp1_recipeproject_huba\ReceptAPI\obj\Debug\net8.0\ReceptAPI.genruntimeconfig.cache
 D:\RecipeProjectCsalaHuba\mp1_recipeproject_huba\ReceptAPI\obj\Debug\net8.0\ref\ReceptAPI.dll
 D:\RecipeProjectCsalaHuba\mp1_recipeproject_huba\ReceptAPI\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.InMemory.dll
+D:\RecipeProjectCsalaHuba\mp1_recipeproject_huba\ReceptAPI\obj\Debug\net8.0\ReceptAPI.sourcelink.json
