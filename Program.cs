@@ -1,9 +1,11 @@
 
 using first;
 using Microsoft.EntityFrameworkCore;
-
+using Azure.Monitor.OpenTelemetry.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddOpenTelemetry().UseAzureMonitor();
 
 var connectionString = Environment.GetEnvironmentVariable("AZURE_POSTGRESQL_CONNECTIONSTRING");
 
